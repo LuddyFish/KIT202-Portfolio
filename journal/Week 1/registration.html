@@ -23,30 +23,31 @@
                 <p>Enter your details below to register: </p>
                 <p>
                     <label>First Name</label>
-                    <input type="text" id="first" name="First Name" />
+                    <input type="text" id="first" name="First Name" required/>
                 </p>
                 <p>
                     <label>Last Name</label>
-                    <input type="text" id="last" name="Last Name" />
+                    <input type="text" id="last" name="Last Name" required/>
                 </p>
                 <p>
                     <label>Select an event</label>
-                    <select id="Select your race" name="Event">
-                        <option placeholder>Select your race</option>
-                        <option>Marathon</option>
-                        <option>Half marathon</option>
-                        <option>10 km</option>
-                        <option>5 km</option>
-                        <option>1 km fun run</option>
+                    <select id="race" name="Event" required>
+                        <option value="" disabled selected hidden>Select your race</option>
+                        <option value="42">Marathon</option>
+                        <option value="21">Half marathon</option>
+                        <option value="10">10 km</option>
+                        <option value="5">5 km</option>
+                        <option value="1">1 km fun run</option>
                     </select>
                 </p>
                 <p>
                     <label>Age group</label>
-                    <select id="Select your age group" name="Age">
-                        <option>Under 21</option>
-                        <option>21-39</option>
-                        <option>40-49</option>
-                        <option>50+</option>
+                    <select id="age" name="Age Category" required>
+                        <option value="" disabled selected hidden>Select your age</option>
+                        <option value="Junior">Under 21</option>
+                        <option value="Open">21-39</option>
+                        <option value="Master">40-49</option>
+                        <option value="Senior Master">50+</option>
                     </select>
                 </p>
                 <label>
@@ -55,15 +56,15 @@
                 </label>
                 <p>
                     <label>Email</label>
-                    <input type="email" id="Email" name="Email"/>
+                    <input type="email" id="email" name="Email" required/>
                 </p>
                 <p>
                     <label>Password</label>
-                    <input type="password" id="Password1" name="Password"/>
+                    <input type="password" id="password" name="Password" required/>
                 </p>
                 <p>
                     <label>Confirm password</label>
-                    <input type="password" id="Password2" name="Con_Password"/>
+                    <input type="password" id="password_confirm" name="Confirm Password" required/>
                 </p>
                 <p>
                     <button type="submit">Register</button>
