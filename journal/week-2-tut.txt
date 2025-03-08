@@ -1,0 +1,22 @@
+I thought this weeks beginner tut was an excellent way to get into HTML (and Git). 
+The tutorial work was fairly simple to get through with clear instructions and had 
+a diverse range of tasks to complete. Although, some tasks towards the end were a 
+bit more fiddly to work with. I had to go look up how to do some of the tasks like
+how do I make all the form elements mandatory and password specifications? I didn't 
+need to use ChatGPT to find out as there were plenty of sources to help me discover
+the answer and I was able to make sense of how they worked, especially considering
+most of this is still basic stuff. Maybe I wasn't supposed to do them just yet, but
+I still did them anyway because I like to do everything that's there. 
+I also liked how we were given examples of what our finished page should look like, 
+as it was another source of trying to match it based on your current knowledge 
+without needing to refer to the activity manual (asides from the tasks with 
+specifications).
+
+It was a little challenging trying to set up with Gitea with ictteach. I am familar
+with Git already, so I was ready to create a new repository on GitHub, but I do like
+how most things are already set up for us to avoid potential issues, which I know
+many who are inexperienced will make. I ended up losing all my finished progess on
+`index.html` because of a failed save, which was a pain to recover. 
+Hopefully the team stuff goes all well without too many (if any) hiccups. Having
+had some disasterous experiences with version control in the past, I hope to avoid 
+repeating those occurances at all costs.
