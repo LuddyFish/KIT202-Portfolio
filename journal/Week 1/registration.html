@@ -60,11 +60,13 @@
                 </p>
                 <p>
                     <label>Password</label>
-                    <input type="password" id="password" name="Password" required/>
+                    <input type="password" id="password" name="Password" 
+                    pattern=".{6,18}" title="Password must be 6-18 characters long" required/>
                 </p>
                 <p>
                     <label>Confirm password</label>
-                    <input type="password" id="password_confirm" name="Confirm Password" required/>
+                    <input type="password" id="password_confirm" name="Confirm Password" 
+                    pattern=".{6,18}" title="Password must be 6-18 characters long" required/>
                 </p>
                 <p>
                     <button type="submit">Register</button>
