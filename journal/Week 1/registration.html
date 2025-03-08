@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Jack Luttrell">
+        <title>Registration page of Marathon 2025</title>
+    </head>
+    <body>
+        <div id="container">
+            <img src = "images/banner.png" alt = "Marathon banner" width="800">
+            <h1>Marathon 2025</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Registration</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="form">
+            <form>
+                <p>Enter your details below to register: </p>
+                <p>
+                    <label>First Name</label>
+                    <input type="text" id="first" name="First Name" />
+                </p>
+                <p>
+                    <label>Last Name</label>
+                    <input type="text" id="last" name="Last Name" />
+                </p>
+                <p>
+                    <label>Select an event</label>
+                    <select id="Select your race" name="Event">
+                        <option placeholder>Select your race</option>
+                        <option>Marathon</option>
+                        <option>Half marathon</option>
+                        <option>10 km</option>
+                        <option>5 km</option>
+                        <option>1 km fun run</option>
+                    </select>
+                </p>
+                <p>
+                    <label>Age group</label>
+                    <select id="Select your age group" name="Age">
+                        <option>Under 21</option>
+                        <option>21-39</option>
+                        <option>40-49</option>
+                        <option>50+</option>
+                    </select>
+                </p>
+                <label>
+                    <input type="checkbox" id="Exp" name="Experience"/>
+                    Prior experience
+                </label>
+                <p>
+                    <label>Email</label>
+                    <input type="email" id="Email" name="Email"/>
+                </p>
+                <p>
+                    <label>Password</label>
+                    <input type="password" id="Password1" name="Password"/>
+                </p>
+                <p>
+                    <label>Confirm password</label>
+                    <input type="password" id="Password2" name="Con_Password"/>
+                </p>
+                <p>
+                    <button type="submit">Register</button>
+                    
+                    <a href="index.html">Cancel/Back</a>
+                </p>
+            </form>
+        </div>
+
+        <div id="footer">
+            <footer>KIT202 Portfolio | Marathon 2025</footer>
+        </div>
+    </body>
+</html>
