@@ -1,0 +1,55 @@
+/* Style for KIT202 Journal */
+
+body {
+    width: 21cm;
+    height: 29.7cm;
+    background-color: #12314a;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: justify;
+    margin: 5px auto;
+}
+
+header {
+    background-color: #163853;
+    padding: 10px;
+}
+
+main {
+    padding: 20px 15px;
+    background-color: #dddddd;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 320%;
+}
+
+h2 {
+    color: #163853;
+    border-top: 2.5px dashed #163853;
+    margin: 10px auto -5px;
+    text-indent: 20px;
+    text-decoration: underline 2px;
+    padding-top: 15px;
+}
+#firstWeek {
+    border-top: none;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: none;
+    padding: 10px;
+    background-color: white;
+}
+
+footer {
+    font-size: 12px;
+    color: #556677;
+    text-align: center;
+}
