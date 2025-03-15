@@ -10,7 +10,7 @@
     <body>
         <div id="container">
             <header>
-                <img src = "images/banner.png" alt = "Marathon banner" width="800">
+                <img src = "images/banner.png" alt = "Marathon banner" class="banner" width="800">
                 <h1>Marathon 2025</h1>
             </header>
             <nav>
@@ -21,17 +21,13 @@
                 </ul>
             </nav>
 
-            <form>
+            <main>
                 <p>Enter your details below to register: </p>
-                <p>
+                <form id="registrationForm" class="form-label form-control col-span">
                     <label>First Name</label>
                     <input type="text" id="first" name="First Name" required/>
-                </p>
-                <p>
                     <label>Last Name</label>
                     <input type="text" id="last" name="Last Name" required/>
-                </p>
-                <p>
                     <label>Select an event</label>
                     <select id="race" name="Event" required>
                         <option value="" disabled selected hidden>Select your race</option>
@@ -41,8 +37,6 @@
                         <option value="5">5 km</option>
                         <option value="1">1 km fun run</option>
                     </select>
-                </p>
-                <p>
                     <label>Age group</label>
                     <select id="age" name="Age Category" required>
                         <option value="" disabled selected hidden>Select your age</option>
@@ -51,35 +45,28 @@
                         <option value="Master">40-49</option>
                         <option value="Senior Master">50+</option>
                     </select>
-                </p>
-                <label>
-                    <input type="checkbox" id="Exp" name="Experience"/>
-                    Prior experience
-                </label>
-                <p>
+                    <label>
+                        <input type="checkbox" id="Exp" name="Experience"/>
+                        Prior experience
+                    </label><br>
                     <label>Email</label>
                     <input type="email" id="email" name="Email" required/>
-                </p>
-                <p>
                     <label>Password</label>
                     <input type="password" id="password" name="Password" 
                     pattern=".{6,18}" title="Password must be 6-18 characters long" required/>
-                </p>
-                <p>
                     <label>Confirm password</label>
                     <input type="password" id="password_confirm" name="Confirm Password" 
                     pattern=".{6,18}" title="Password must be 6-18 characters long" required/>
-                </p>
-                <p>
-                    <button type="submit">Register</button>
-                    
-                    <a href="index.html">Cancel/Back</a>
-                </p>
-            </form>
+                    <p>
+                        <button class="btn" id="register_b" type="submit">Register</button>
+                        <a href="index.html"><button class="btn" id="back_b" type="button">Cancel/Back</button></a>
+                    </p>
+                </form>
 
-            <footer>
-                KIT202 Portfolio | Marathon 2025
-            </footer>
+                <footer>
+                    KIT202 Portfolio | Marathon 2025
+                </footer>
+            </main>
         </div>
     </body>
 </html>
