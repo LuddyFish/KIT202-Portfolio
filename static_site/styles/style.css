@@ -234,6 +234,30 @@ form actions (the submit and cancel buttons)
     grid-column-end: 2;
 }
 
+#testimonials { 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: baseline;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    max-width: 10em;
+    row-gap: 5px;
+    color: white;
+    background-color: steelblue;
+    border-radius: 10px;
+    padding: 10px;
+    .author {
+        text-align: right;
+        font-style: italic;
+    }
+}
+
+
+
 @media (max-width: 800px) {
     body {
         margin: auto;
@@ -256,7 +280,7 @@ form actions (the submit and cancel buttons)
         grid-template-columns: 100%;
         gap: 5px;
     }
-    
+
     .col-span {
         grid-column-end: inherit;
     }
