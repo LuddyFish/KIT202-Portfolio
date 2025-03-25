@@ -63,18 +63,43 @@ function determineRule2Winner() {
 }
 
 document.getElementById("activity2-highest-avg").innerHTML = determineRule1Winner();
-document.getElementById("activity2-most-wins").innerHTML =determineRule2Winner();
+document.getElementById("activity2-most-wins").innerHTML = determineRule2Winner();
 
 /* Activity 3: Tax */
 
 
-let clients = { //TODO Record client incomes here
-
+let clients = { 
+    "Max": 24601,
+    "Ash": 55100,
+    "Bailey": 147800,
 };
 
 //TODO Write your other functions for Activity 3 here
+function calculateTax(income) {
+    let taxOwed;
+    if (income > 130000) {
+        taxOwed = Math.round(income * 0.27);
+    } else if (income > 90000) {
+        taxOwed = Math.round(income * 0.21);
+    } else if (income > 45000) {
+        taxOwed = Math.round(income * 0.15);
+    } else {
+        taxOwed = Math.round(income * 0.10);
+    }
 
+    return taxOwed;
+}
 
+function clientTaxing(clientList) {
+    let output = "";
+    for (let name in clientList) {
+        let taxed = calculateTax(clientList[name]);
+        document.getElementById("activity3-taxes").innerHTML += `${name}'s income of $${clientList[name]} was taxed $${taxed}. Their net income is $${clientList[name] - taxed}.<br>`;
+    }
+    //document.getElementById("activity3-taxes").innerHTML = output;
+}
+
+clientTaxing(clients);
 
 /* Activity 4: Arbitrary HTML */
 
