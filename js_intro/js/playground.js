@@ -29,15 +29,11 @@ function average(values) {
         mean += values[i];
     }
     mean /= values.length;
-
     return mean;
 }
 
 function determineRule1Winner() {
-    let owl_avg = average(maskedOwls);
-    let quoll_avg = average(quolls);
-
-    return winner(owl_avg, quoll_avg);
+    return winner(average(maskedOwls), average(quolls));
 }
 
 // Activity 2, Rule 2
@@ -51,14 +47,12 @@ function wins(scores1, scores2) {
             wins++;
         }
     }
-
     return wins;
 }
 
 function determineRule2Winner() {
     let owl_wins = wins(newMaskedOwls, newQuolls);
     let quoll_wins = wins(newQuolls, newMaskedOwls);
-
     return winner(owl_wins, quoll_wins);
 }
 
@@ -86,7 +80,6 @@ function calculateTax(income) {
     } else {
         taxOwed = Math.round(income * 0.10);
     }
-
     return taxOwed;
 }
 
