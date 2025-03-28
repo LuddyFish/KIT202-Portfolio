@@ -86,9 +86,9 @@ function clientTaxing(clientList) {
     let output = "";
     for (let name in clientList) {
         let taxed = Math.round(calculateTax(clientList[name]));
-        document.getElementById("activity3-taxes").innerHTML += `${name}'s income of $${clientList[name]} was taxed $${taxed}. Their net income is $${clientList[name] - taxed}.<br>`;
+        output += `${name}'s income of $${clientList[name]} was taxed $${taxed}. Their net income is $${clientList[name] - taxed}.<br>`;
     }
-    //document.getElementById("activity3-taxes").innerHTML = output;
+    document.getElementById("activity3-taxes").innerHTML = output;
 }
 
 clientTaxing(clients);
