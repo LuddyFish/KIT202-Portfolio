@@ -96,7 +96,8 @@ clientTaxing(clients);
 /* Activity 4: Arbitrary HTML */
 
 function arbitraryHTML() {
-    document.getElementById("activity4-html").innerHTML = `<article class="content">
+    document.getElementById("activity4-html").innerHTML = 
+        `<article class="content">
         <h1 class="title">Hardest Problem in Computer Science: Centering Things</h1>
         <p><em>Translations: <a href="https://nptr.cc/posts/tonsky-blog-centering/" target="_blank">Chinese</a> <a href="https://coliss.com/articles/build-websites/operation/work/about-centering.html" target="_blank">Japanese</a> <a href="https://habr.com/ru/companies/ruvds/articles/810311/" target="_blank">Russian</a></em></p>
         <p>This is my claim: we, as a civilization, forgot how to center things.</p>
