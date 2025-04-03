@@ -6,6 +6,7 @@
         <title>Registration page of Marathon 2025</title>
         <link rel="stylesheet" href="styles/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="js/validation.js" defer></script>
     </head>
 
     <body>
@@ -25,7 +26,7 @@
 
             <main>
                 <p>Enter your details below to register: </p>
-                <form id="registrationForm" class="form-label form-control col-span">
+                <form id="registrationForm" class="form-label form-control col-span" novalidate>
                     <label for="first">First Name</label>
                     <input type="text" id="first" name="First Name" required/>
 
