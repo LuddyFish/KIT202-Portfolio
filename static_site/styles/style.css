@@ -256,6 +256,18 @@ aside {
     }
 }
 
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.error-border {
+    border: red 2px solid;
+}
 
 
 @media (max-width: 800px) {

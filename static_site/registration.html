@@ -29,9 +29,11 @@
                 <form id="registrationForm" class="form-label form-control col-span" novalidate>
                     <label for="first">First Name</label>
                     <input type="text" id="first" name="First Name" required/>
+                    <span class="error hidden" id="first-err"></span>
 
                     <label fpr="last">Last Name</label>
                     <input type="text" id="last" name="Last Name" required/>
+                    <span class="error hidden" id="last-err"></span>
 
                     <label for="race">Select an event</label>
                     <select id="race" name="Event" required>
@@ -42,6 +44,7 @@
                         <option value="5">5 km</option>
                         <option value="1">1 km fun run</option>
                     </select>
+                    <span class="error hidden" id="race-err"></span>
 
                     <label for="age">Age group</label>
                     <select id="age" name="Age Category" required>
@@ -51,22 +54,27 @@
                         <option value="Master">40-49</option>
                         <option value="Senior Master">50+</option>
                     </select>
+                    <span class="error hidden" id="age-err"></span>
 
                     <label>
                         <input type="checkbox" id="exp" name="Experience"/>
                         Prior experience
                     </label><br>
+                    <span class="error hidden" id="exp-err"></span>
 
                     <label for="email">Email</label>
                     <input type="email" id="email" name="Email" required/>
+                    <span class="error hidden" id="email-err"></span>
 
                     <label for="password">Password</label>
                     <input type="password" id="password" name="Password" 
                     pattern=".{6,18}" title="Password must be 6-18 characters long" required/>
+                    <span class="error hidden" id="password-err"></span>
 
                     <label for="password_confirm">Confirm password</label>
                     <input type="password" id="password_confirm" name="Confirm Password" 
                     pattern=".{6,18}" title="Password must be 6-18 characters long" required/>
+                    <span class="error hidden" id="password-confirm-err"></span>
                     
                     <p>
                         <button class="btn" id="register_b" type="submit">Register</button>
