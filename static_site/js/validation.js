@@ -45,23 +45,22 @@ function validateForm(event) {
         if (errorMessage) {
             errors = true;
             errorBox.innerHTML = errorMessage;
-            errorBox.classList.remove("hidden");
             element.classList.add("error-border");
         } else {
             errorBox.innerHTML = "";
-            errorBox.classList.add("hidden");
             element.classList.remove("error-border");
         }
     });
 
     // prevent submission if form is incomplete
+    // and update the form to include/disclude error messages
     if (errors == true) {
-        form.querySelector("#exp-err").classList.remove("hidden");
+        checks.forEach(({ errorId }) => form.querySelector(errorId).classList.remove("hidden"));
         form.style.gridTemplateColumns = "auto 200px auto";
         document.querySelector(".col-span").style.gridColumnEnd = "3";
         event.preventDefault();
     } else {
-        form.querySelector("#exp-err").classList.add("hidden");
+        checks.forEach(({ errorId }) => form.querySelector(errorId).classList.add("hidden"));
         form.style.gridTemplateColumns = "auto 200px";
         document.querySelector(".col-span").style.gridColumnEnd = "2";
     }
