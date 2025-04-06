@@ -16,6 +16,23 @@ header {
     padding: 10px;
 }
 
+nav {
+    background-color: #dddddd;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    ul {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 100px 100px 100px 100px 100px 100px;
+        gap: 20px 10px;
+        list-style-type: none;
+        font-size: 16px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        a {
+            text-decoration: none;
+        }
+    }
+}
 main {
     padding: 20px 15px;
     background-color: #dddddd;
@@ -29,13 +46,19 @@ h1 {
 
 h2 {
     color: #163853;
+    text-align: center;
+    padding-top: 15px;
+    text-decoration: underline 2px;
+}
+
+.week {
+    color: #163853;
     border-top: 2.5px dashed #163853;
     margin: 10px auto -5px;
+    text-align: left;
     text-indent: 20px;
-    text-decoration: underline 2px;
-    padding-top: 15px;
 }
-#firstWeek {
+.first {
     border-top: none;
     margin-top: 0px;
     padding-top: 0px;
