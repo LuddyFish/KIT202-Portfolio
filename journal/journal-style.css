@@ -23,13 +23,20 @@ nav {
     ul {
         display: grid;
         justify-content: center;
-        grid-template-columns: 100px 100px 100px 100px 100px 100px;
-        gap: 20px 10px;
         list-style-type: none;
         font-size: 16px;
         font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         a {
             text-decoration: none;
+        }
+        &.weeks {
+            grid-template-columns: 100px 100px 100px 100px 100px 100px;
+            gap: 20px 10px;
+        }
+        &.assignments {
+            margin-left: -25px;
+            grid-template-columns: 120px 120px;
+            gap: 20px 40px;
         }
     }
 }
@@ -51,7 +58,7 @@ h2 {
     text-decoration: underline 2px;
 }
 
-.week {
+.content {
     color: #163853;
     border-top: 2.5px dashed #163853;
     margin: 10px auto -5px;
@@ -71,8 +78,18 @@ p {
     background-color: white;
 }
 
+.spacer {
+    padding: 10px 0px;
+    background-color: #12314a;
+    &.inside {
+        padding: 2.5px 0px;
+        background-color: #dddddd;
+    }
+}
+
 footer {
     font-size: 12px;
     color: #dddddd;
     text-align: center;
+    padding: 8px;
 }
