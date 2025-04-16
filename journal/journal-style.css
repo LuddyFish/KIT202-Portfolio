@@ -80,10 +80,8 @@ p {
 
 .spacer {
     padding: 10px 0px;
-    background-color: #12314a;
     &.inside {
         padding: 2.5px 0px;
-        background-color: #dddddd;
     }
 }
 
