@@ -89,9 +89,9 @@
     // Note: large amounts of data would not normally be hard-coded in the page
 
     $clients = [
-      "Max": 24601,
-      "Ash": 55100,
-      "Bailey": 147800,
+      "Max" => 24601,
+      "Ash" => 55100,
+      "Bailey" => 147800,
     ];
 
     function calculate_tax(int $income) {
