@@ -49,7 +49,7 @@
             $bandicoots = [72, 105, 99, 63];
 
             $mkoAvg = average($maskedOwls);
-            $bndAvg = average($bandicoots)
+            $bndAvg = average($bandicoots);
 
             if ($mkoAvg > $bndAvg) {
               echo $mwoWinMessage;
@@ -65,7 +65,6 @@
           Who won this year (most wins rule):
           <div class="answer">
             <?php
-            //TODO Write your PHP code for Activity 2, Rule 2 (most wins) here:
             $maskedOwls = [78, 61, 56, 73, 101];
             $bandicoots = [86, 45, 54, 73, 124];
 
@@ -89,14 +88,12 @@
     // Activity 3 data and helper function
     // Note: large amounts of data would not normally be hard-coded in the page
 
-    //TODO Record client incomes in this associative array
     $clients = [
       "Max": 24601,
       "Ash": 55100,
       "Bailey": 147800,
     ];
 
-    //TODO Define calculate_tax() here
     function calculate_tax(int $income) {
       switch (true) {
         case $income > 130000:
@@ -118,13 +115,11 @@
           Tax assessments:
           <div class="answer">
           <?php
-          //TODO Write the rest of your PHP code for Activity 3 here:
             foreach ($clients as $i => $name) {
               $tax = Math.round(calculate_tax($name));
               $net = $name - $tax;
               echo "Given $name's taxable income of $$$name, they pay $tax in tax, so their after tax income is $net.";
             }
-
           ?>
         </div>
         </li>
