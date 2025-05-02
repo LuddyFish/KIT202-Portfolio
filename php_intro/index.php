@@ -118,7 +118,7 @@
             foreach ($clients as $name => $i) {
               $tax = round(calculate_tax($i));
               $net = $i - $tax;
-              echo "Given $name's taxable income of $$i, they pay $tax in tax, so their after tax income is $net.";
+              echo "Given $name's taxable income of $$i, they pay $tax in tax, so their after tax income is $net.<br>";
             }
           ?>
         </div>
