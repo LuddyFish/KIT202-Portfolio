@@ -1,0 +1,45 @@
+/* Style for the KIT202 Home page
+    Used in conjusted with `journal-style.css`
+*/
+
+body {
+    width: none;
+    margin: 0;
+    padding: 0;
+    justify-self: center;
+}
+
+h1 {
+    padding: 0 1%;
+}
+
+h2 {
+    font-size: 24px;
+    padding-left: 2%;
+}
+
+a {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+p {
+    padding: 10px 20px;
+}
+
+.link {
+    padding: 0 -10px;
+}
+
+@media (min-width: 1000px) {
+    body {
+        width: 900px;
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        width: 100%;
+    }
+}
