@@ -82,6 +82,9 @@ p {
     &.inside {
         padding: 2.5px 0px;
     }
+    &.para {
+        padding: 5px 0px;
+    }
 }
 
 footer {
