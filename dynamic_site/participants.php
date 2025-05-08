@@ -29,13 +29,14 @@
           </tr>
         <?php
           if ($result->num_rows > 0) {
-            echo "<tr>";
             while ($row = $result->fetch_assoc()) {
-              echo "<tc>{$row['firstName']}</tc>
-                    <tc>{$row['lastName']}</tc>
-                    <tc>{$row['experience']}</tc>
-                    <tc>{$row['DOB']}</tc>
-                    <tc>{$row['gender']}</tc>";
+              echo "<tr>
+                    <td>{$row['firstName']}</td>
+                    <td>{$row['lastName']}</td>
+                    <td>{$row['experience']}</td>
+                    <td>{$row['DOB']}</td>
+                    <td>{$row['gender']}</td>
+                    </tr>";
             }
           }
         ?>
