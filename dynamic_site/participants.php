@@ -9,7 +9,7 @@
 </head>
 <body>
   <div id="container">
-    <!-- For final activity you can add some things here -->
+    <?php include "header.php"; ?>
     <main>
       <h2>Registered Participants</h2>
       <?php
@@ -46,7 +46,7 @@
         
       ?>
     </main>
-    <!-- For final activity you can add something here -->
+    <?php include "footer.php"; ?>
   </div>
 </body>
 </html>
