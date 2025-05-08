@@ -146,7 +146,12 @@ main table {
         border: 1px solid #dddddd;
         padding: 5px;
     }
-    th {background-color: #ededed;}
+    th {
+        background-color: #ededed;
+    }
+    td:hover {
+        background-color: #448fd4;
+    }
 }
 
 
