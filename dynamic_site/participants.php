@@ -13,10 +13,36 @@
     <main>
       <h2>Registered Participants</h2>
       <?php
-      require "dbconn.php";
+        require "dbconn.php";
 
-      SELECT firstName, lastName, DOB, gender, experience FROM Participant;
-
+        $sql = "SELECT firstName, lastName, DOB, gender, experience FROM Participant;";
+        
+        if ($result = $conn->query($sql)) {
+      ?>
+        <table>
+          <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Experience</th>
+            <th>DOB</th>
+            <th>Gender</th>
+          </tr>
+        <?php
+          if ($result->num_rows > 0) {
+            echo "<tr>";
+            while ($row = $result->fetch_assoc()) {
+              echo "<tc>{$row['firstName']}</tc>
+                    <tc>{$row['lastName']}</tc>
+                    <tc>{$row['Experience']}</tc>
+                    <tc>{$row['DOB']}</tc>
+                    <tc>{$row['Gender']}</tc>";
+            }
+          }
+        ?>
+        </table>
+      <?php
+        }
+        
       ?>
     </main>
     <!-- For final activity you can add something here -->
