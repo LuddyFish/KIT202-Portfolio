@@ -33,9 +33,9 @@
             while ($row = $result->fetch_assoc()) {
               echo "<tc>{$row['firstName']}</tc>
                     <tc>{$row['lastName']}</tc>
-                    <tc>{$row['Experience']}</tc>
+                    <tc>{$row['experience']}</tc>
                     <tc>{$row['DOB']}</tc>
-                    <tc>{$row['Gender']}</tc>";
+                    <tc>{$row['gender']}</tc>";
             }
           }
         ?>
