@@ -149,8 +149,8 @@ main table {
     th {
         background-color: #ededed;
     }
-    td:hover {
-        background-color: #448fd4;
+    tr:hover {
+        background-color: #71aee8;
     }
 }
 
