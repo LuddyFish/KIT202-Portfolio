@@ -17,55 +17,68 @@
             <main>
                 <h2>Testimonials</h2>
                 <p>Here's what past participants had to say about the event...</p>
+                <?php
+                    function BuildQuote($quote, $author) {
+                        echo '<aside>
+                                <div class="quote">';
+                        echo $quote;
+                        echo '</div>
+                                <div class="author">';
+                        echo $author;
+                        echo '</div
+                                </aside'
+                    }
+                ?>
                 <section id="testimonials">
-                    <aside>
-                        <div class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                        <div class="author">Lee Ping</div>
-                    </aside>
-                    <aside>
-                        <div class="quote">Yoshi! (Tortor!)</div>
-                        <div class="author">Yoshi</div>
-                    </aside>
-                    <aside>
-                        <div class="quote">Ex sapien vitae pellentesque sem placerat in id.</div>
-                        <div class="author">Wally West</div>
-                    </aside>
-                    <aside>
-                        <div class="quote">Pretium tellus duis convallis tempus leo eu aenean. Urna tempor pulvinar vivamus fringilla lacus nec metus.</div>
-                        <div class="author">Yzma (and Kronk)</div>
-                    </aside>
-                    <aside>
-                        <div class="quote">Iaculis massa nisl malesuada lacinia integer nunc posuere.</div>
-                        <div class="author">Hiccup</div>
-                    </aside>
-                    <aside>
-                        <div class="quote">Semper vel class aptent taciti sociosqu ad litora.</div>
-                        <div class="author">Perry the Platypus</div>
-                    </aside>
-                    <aside>
-                        <div class="quote">Conubia nostra inceptos himenaeos orci varius natoque penatibus.</div>
-                        <div class="author">Mushu</div>
-                    </aside>
-                    <aside>
-                        <div class="quote">Dis parturient montes nascetur ridiculus mus donec rhoncus.</div>
-                        <div class="author">Danny Phantom</div>
-                    </aside>
-                    <aside>
-                        <div class="quote">Hyah! Hah! (Nulla molestie mattis scelerisque maximus eget fermentum odio.)</div>
-                        <div class="author">Link</div>
-                    </aside>
-                    <aside>
-                        <div class="quote">Purus est efficitur laoreet mauris pharetra vestibulum fusce.</div>
-                        <div class="author">Susan Murphy</div>
-                    </aside>
-                    <aside>
-                        <div class="quote">Eleifend mi in nulla</div>
-                        <div class="author">Luna Lovegood</div>
-                    </aside>
-                    <aside>
-                        <div class="quote">Sed mollis commodo pretium. Fusce vitae fermentum libero. Quisque porta dui in maximus rutrum.</div>
-                        <div class="author">Jack Frost</div>
-                    </aside>
+                    <?php
+                        $q = "Better than being stuck in dentention, I guess...";
+                        $a = "Lee Ping";
+                        BuildQuote($q, $a);
+
+                        $q = "Yoshi! (Better than Mario Kart. No BS blue shell to stop my lead.)";
+                        $a = "Yoshi";
+                        BuildQuote($q, $a);
+
+                        $q = "2F4U";
+                        $a = "Wally West";
+                        BuildQuote($q, $a);
+
+                        $q = "It was a great race until Kronk pulled the wrong lever!";
+                        $a = "Yzma (and Kronk)";
+                        BuildQuote($q, $a);
+
+                        $q = "Great sights but don't expect dragons to be allowed into the race";
+                        $a = "Hiccup";
+                        BuildQuote($q, $a);
+
+                        $q = "Gyrururururuk. (I only entered to keep Dr Doofenshmirtz from cheating with his \"Super-Speed-Inator\". Good exercise otherwise)";
+                        $a = "Perry the Platypus";
+                        BuildQuote($q, $a);
+
+                        $q = "She lost! How could she lose!? She was leading ahead by 3 minutes!";
+                        $a = "Mushu";
+                        BuildQuote($q, $a);
+
+                        $q = "Great race. The race tracker devices need to be updated to track ghosts though...";
+                        $a = "Danny Phantom";
+                        BuildQuote($q, $a);
+
+                        $q = "Hyah! Hah!";
+                        $a = "Link";
+                        BuildQuote($q, $a);
+
+                        $q = "I'm not sure if using my Ginormica powers to win was within the rules but I do recommend competiting.";
+                        $a = "Susan Murphy";
+                        BuildQuote($q, $a);
+
+                        $q = "It was such a scenic race that I forgot I was even racing. The officials had to come look for me after I wondered off track.";
+                        $a = "Luna Lovegood";
+                        BuildQuote($q, $a);
+
+                        $q = "All I can say is that I bet the Easter Bunny!";
+                        $a = "Jack Frost";
+                        BuildQuote($q, $a);
+                    ?>
                 </section>
                 <?php require "footer.php"; ?>
             </main>
