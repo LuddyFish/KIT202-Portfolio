@@ -27,7 +27,7 @@
                         echo $author;
                         echo '</div
                                 </aside'
-                    }
+                    };
                 ?>
                 <section id="testimonials">
                     <?php
