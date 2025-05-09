@@ -25,7 +25,7 @@
                         echo '</div>
                                 <div class="author">';
                         echo $author;
-                        echo '</div
+                        echo '</div>
                                 </aside>';
                     }
                 ?>
