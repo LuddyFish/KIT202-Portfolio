@@ -9,7 +9,10 @@
 </head>
 <body>
   <div id="container">
-    <?php include "header.php"; ?>
+    <?php 
+      require "header.php"; 
+      require "nav.php";
+    ?>
     <main>
       <h2>Registered Participants</h2>
       <?php
