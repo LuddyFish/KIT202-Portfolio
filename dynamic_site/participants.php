@@ -41,12 +41,19 @@
                     <td>{$row['gender']}</td>
                     </tr>";
             }
+          } else {
+            ?>
+              </table>
+              <p>No registered participants.</p>
+              <table>
+            <?php
           }
         ?>
         </table>
       <?php
+        } else {
+          echo "<p>Unable to access data in '$sql'.</p>";
         }
-        
       ?>
       <?php include "footer.php"; ?>
     </main>
