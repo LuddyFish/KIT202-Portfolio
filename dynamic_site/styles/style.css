@@ -177,6 +177,7 @@ The 'Cancel / Back' button should have:
 You will need to define additional CSS rules to style the button colours
 */
 .btn {
+    display: inline-block;
     border: none;
     margin: 5px 0px;
     padding: 10px 15px;
@@ -186,8 +187,19 @@ You will need to define additional CSS rules to style the button colours
     text-decoration: none;
     cursor: default;  
 }
-#register_b { background-color: #246fb4; }
-#register_b:hover { background-color: #448fd4; }
+table .btn { margin: 0; }
+#register_b { 
+    background-color: #246fb4; 
+    .main-action {
+
+    }
+}
+#register_b:hover { 
+    background-color: #448fd4; 
+    .main-action {
+
+    }
+}
 #back_b { background-color: #7c7c7c; }
 #back_b:hover { background-color: #929292; }
 

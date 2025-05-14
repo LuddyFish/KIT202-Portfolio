@@ -18,10 +18,11 @@
       <?php
         require "dbconn.php";
 
-        $sql = "SELECT firstName, lastName, DOB, gender, experience FROM Participant;";
+        $sql = "SELECT particpantID, firstName, lastName, DOB, gender, experience FROM Participant;";
         
         if ($result = $conn->query($sql)) {
       ?>
+      <p><a href="add.html" class="main-action">Add</a></p>
         <table>
           <tr>
             <th>First name</th>
@@ -29,16 +30,18 @@
             <th>Experience</th>
             <th>DOB</th>
             <th>Gender</th>
+            <th>Action</th>
           </tr>
         <?php
           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
               echo "<tr>
-                    <td>{$row['firstName']}</td>
-                    <td>{$row['lastName']}</td>
+                    <td>htmlspecialchars({$row['firstName']})</td>
+                    <td>htmlspecialchars({$row['lastName']})</td>
                     <td>{$row['experience']}</td>
                     <td>{$row['DOB']}</td>
                     <td>{$row['gender']}</td>
+                    <td><a href=\"edit.php?id={$row['particpantID']}\" class=\"main-action\">Edit</a></td>
                     </tr>";
             }
           } else {
