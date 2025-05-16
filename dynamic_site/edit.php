@@ -54,16 +54,14 @@ function update()
       DOB = ?,
       gender = ?,
       experience = ?
-  WHERE particpantID = $id;";
+  WHERE particpantID = ?;";
   $statement = $conn->prepare($query);
+  $statement->bind_param('sssssi', $_POST['fname'], $_POST['lname'], $_POST['dob'], $_POST['gender'], $_POST['experienced'], $id);
   if ($statement->execute()) {
     if (empty($_POST)) {
       $row = retrieve();
-    } else {
-      update();
-      $conn->close();
-      redirect("participants.php");
     }
+    // TODO: Ask about the end of Wk11 tutorial because it doesn't make sense
   }
 }
 ?>
