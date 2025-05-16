@@ -22,26 +22,30 @@
         
         if ($result = $conn->query($sql)) {
       ?>
-      <p><a href="add.html" class="main-action">Add</a></p>
-        <table>
-          <tr>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Experience</th>
-            <th>DOB</th>
-            <th>Gender</th>
-            <th>Action</th>
-          </tr>
+      <p>
+        <button class="btn" id="register_b" type="button"><a href="add.html" class="main-action">Add</a></button>
+      </p>
+      <table>
+        <tr>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Experience</th>
+          <th>DOB</th>
+          <th>Gender</th>
+          <th>Action</th>
+        </tr>
         <?php
           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
               echo "<tr>
-                    <td>htmlspecialchars({$row['firstName']})</td>
-                    <td>htmlspecialchars({$row['lastName']})</td>
+                    <td>{htmlspecialchars($row['firstName'])}</td>
+                    <td>{htmlspecialchars($row['lastName'])}</td>
                     <td>{$row['experience']}</td>
                     <td>{$row['DOB']}</td>
                     <td>{$row['gender']}</td>
-                    <td><a href=\"edit.php?id={$row['particpantID']}\" class=\"main-action\">Edit</a></td>
+                    <td><button class=\"btn\" id=\"register_b\" type=\"button\">
+                      <a href=\"edit.php?id={$row['particpantID']}\" class=\"main-action\">Edit</a>
+                    </button></td>
                     </tr>";
             }
           } else {
