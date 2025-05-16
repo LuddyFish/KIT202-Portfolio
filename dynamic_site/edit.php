@@ -1,6 +1,6 @@
 <?php
 //TODO Include/Require dbconn
-
+require "dbconn.php";
 //Check if appropriate GET (and POST) data has been received.
 //If not then redirect the browser, which can only happen before ordinary content is generated.
 if (!isset($_GET["id"])) {
@@ -32,7 +32,14 @@ function retrieve()
   global $conn;
   global $id;
 
-  //TODO Complete this function
+  $query = "SELECT *
+            FROM Participant
+            WHERE particpantID = $id;";
+  $statement = $conn->prepare($query);
+  if ($statement->execute()) {
+    $row = $statement->get_result()->fetch_assoc();
+  }
+  return $row;
 }
 
 /** Updates the database with parsed values from the POST data. */
@@ -42,6 +49,21 @@ function update()
   global $id;
 
   //TODO Complete this function
+  $query = "UPDATE Participant
+  SET firstName = ?,
+      lastName = ?,
+      dob = ?,
+      gender = ?,
+      experience = ?
+  WHERE particpantID = $id;";
+  $statement = $conn->prepare($query);
+  if ($statement->execute()) {
+    if (empty($_POST)) {
+      $row = retrieve();
+    } else {
+      update();
+    }
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -54,35 +76,56 @@ function update()
 </head>
 <body>
   <div id="container">
-    <!-- Optional: You may choose to include common page components here -->
+    <?php
+    include "components/header.php";
+    include "components/nav.php";
+    ?>
     <main>
       <h2>Edit Participant</h2>
       <!-- $_SERVER["PHP_SELF"] represents the current page -->
       <form class="editForm" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"] . "?id=$id"); ?>">
         <label class="form-label" for="fname">First name</label>
-        <input class="form-control" type="text" name="fname" id="fname" value="<?php /* Complete this */ ?>">
+        <input class="form-control" type="text" name="fname" id="fname" value="<?php echo $row['firstName']; ?>">
         <span class="error-message unused"></span>
 
         <label class="form-label">Last name</label>
-        <input class="form-control" type="text" name="lname" id="lname" value="<?php /* Complete this */ ?>">
+        <input class="form-control" type="text" name="lname" id="lname" value="<?php echo $row['lastName']; ?>">
         <span class="error-message unused"></span>
 
         <fieldset class="col-span">
+          <?php
+            function exp_check($entity, $value) {
+              if ($entity === $value) {
+                echo "checked";
+              } else {
+                echo "";
+              }
+            }
+          ?>
           <legend class="form-label">Prior race experience?</legend>
-          <label class="form-label"><input type="radio" name="experienced" value="1" <?php /* Complete this */ ?> required> Yes</label>
-          <label class="form-label"><input type="radio" name="experienced" value="0" <?php /* Complete this */ ?> required> No</label>
+          <label class="form-label"><input type="radio" name="experienced" value="yes" <?php exp_check($row['experience'], "yes"); ?> required> Yes</label>
+          <label class="form-label"><input type="radio" name="experienced" value="no" <?php exp_check($row['experience'], "no"); ?> required> No</label>
         </fieldset>
 
         <label class="form-label">Date of birth</label>
-        <input class="form-control" type="date" name="dob" id="dob" value="<?php /* Complete this */ ?>">
+        <input class="form-control" type="date" name="dob" id="dob" value="<?php echo $row['DOB']; ?>">
         <span class="error-message unused"></span>
 
         <label class="form-label">Gender</label>
         <select class="form-control" id="gender" name="gender">
-          <option value="undisclosed" <?php /* Complete this */ ?>>Prefer not to disclose</option>
-          <option value="male" <?php /* Complete this */ ?>>Male</option>
-          <option value="female" <?php /* Complete this */ ?>>Female</option>
-          <option value="neither" <?php /* Complete this */ ?>>Non-Binary, Gender Fluid, Gender non-conforming, or Gender queer</option>
+          <?php
+            function gender_check($entity, $value) {
+              if ($entity === $value) {
+                echo "selected";
+              } else {
+                echo "";
+              }
+            }
+          ?>
+          <option value="undisclosed" <?php gender_check($row['gender'], "undisclosed"); ?>>Prefer not to disclose</option>
+          <option value="male" <?php gender_check($row['gender'], "male"); ?>>Male</option>
+          <option value="female" <?php gender_check($row['gender'], "female"); ?>>Female</option>
+          <option value="neither" <?php gender_check($row['gender'], "neither"); ?>>Non-Binary, Gender Fluid, Gender non-conforming, or Gender queer</option>
         </select>
 
         <p class="col-span">
@@ -91,7 +134,9 @@ function update()
         </p>
       </form>
     </main>
-    <!-- Optional: You may choose to include a common page component here -->
+    <?php
+    include "components/footer.php";
+    ?>
   </div>
 </body>
 </html>
