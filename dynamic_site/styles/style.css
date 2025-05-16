@@ -205,7 +205,7 @@ using JavaScript in Week 5.)
 - The gap between elements is 10px
 - Justify the content to the left
 */
-#registrationForm,.editForm {
+#registrationForm, .editForm {
     display: grid;
     grid-template-columns: auto 200px;
     gap: 10px;
