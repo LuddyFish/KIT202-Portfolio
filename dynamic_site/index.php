@@ -11,8 +11,8 @@
     <body>
         <div id="container">
             <?php
-                require "header.php";
-                require "nav.php";
+                require "components/header.php";
+                require "components/nav.php";
             ?>
             <main>
                 <h2>Event Information</h2>
@@ -53,7 +53,7 @@
                 <a href="registration.html"><button class="btn" id="register_b" type="button">Register</button></a>
                 <h2>Course Description</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com-modo consequat.</p>
-                <?php require "footer.php"; ?>
+                <?php require "components/footer.php"; ?>
             </main>
         </div>
     </body>

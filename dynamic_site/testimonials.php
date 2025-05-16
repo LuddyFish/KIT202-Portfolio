@@ -11,8 +11,8 @@
     <body>
         <div id="container">
             <?php
-                require "header.php";
-                require "nav.php";
+                require "components/header.php";
+                require "components/nav.php";
             ?>
             <main>
                 <h2>Testimonials</h2>
@@ -80,7 +80,7 @@
                         BuildQuote($q, $a);
                     ?>
                 </section>
-                <?php require "footer.php"; ?>
+                <?php require "components/footer.php"; ?>
             </main>
         </div>
     </body>

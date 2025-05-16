@@ -10,8 +10,8 @@
 <body>
   <div id="container">
     <?php 
-      require "header.php"; 
-      require "nav.php";
+      require "components/header.php"; 
+      require "components/nav.php";
     ?>
     <main>
       <h2>Registered Participants</h2>
@@ -64,7 +64,7 @@
           echo "<p>Unable to access data in '$sql'.</p>";
         }
       ?>
-      <?php include "footer.php"; ?>
+      <?php include "components/footer.php"; ?>
     </main>
   </div>
 </body>

@@ -12,8 +12,8 @@
     <body>
         <div id="container">
             <?php
-                require "header.php";
-                require "nav.php";
+                require "components/header.php";
+                require "components/nav.php";
             ?>
             <main>
                 <p>Enter your details below to register: </p>
@@ -72,7 +72,7 @@
                         <a href="index.html"><button class="btn" id="back_b" type="button">Cancel/Back</button></a>
                     </p>
                 </form>
-                <?php require "footer.php"; ?>
+                <?php require "components/footer.php"; ?>
             </main>
         </div>
     </body>
