@@ -23,7 +23,7 @@
         if ($result = $conn->query($sql)) {
       ?>
       <p>
-        <button class="btn" id="register_b" type="button"><a href="add.html" class="main-action">Add</a></button>
+        <a href="add.html" class="main-action"><button class="btn" id="register_b" type="button">Add</button></a>
       </p>
       <table>
         <tr>
@@ -38,14 +38,16 @@
           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
               echo "<tr>
-                    <td>{htmlspecialchars($row['firstName'])}</td>
-                    <td>{htmlspecialchars($row['lastName'])}</td>
+                    <td>htmlspecialchars({$row['firstName']})</td>
+                    <td>htmlspecialchars({$row['lastName']})</td>
                     <td>{$row['experience']}</td>
                     <td>{$row['DOB']}</td>
                     <td>{$row['gender']}</td>
-                    <td><button class=\"btn\" id=\"register_b\" type=\"button\">
-                      <a href=\"edit.php?id={$row['particpantID']}\" class=\"main-action\">Edit</a>
-                    </button></td>
+                    <td><a href=\"edit.php?id={$row['particpantID']}\" class=\"main-action\">
+                      <button class=\"btn\" id=\"register_b\" type=\"button\">
+                        Edit
+                      </button>
+                    </a></td>
                     </tr>";
             }
           } else {
