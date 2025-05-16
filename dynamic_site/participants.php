@@ -38,7 +38,7 @@
           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
               $safeFirst = htmlspecialchars($row['firstName']);
-              $safeLast = htmlspecialchars($rows['lastName']);
+              $safeLast = htmlspecialchars($row['lastName']);
               echo "<tr>
                     <td>{$safeFirst}</td>
                     <td>{$safeLast}</td>
