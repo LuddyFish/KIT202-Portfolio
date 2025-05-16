@@ -24,27 +24,27 @@
     <main>
       <h2>Add Participant</h2>
       <!-- TODO In style.css: add .editForm to the selector list for #registrationForm to apply the same styling -->
-      <form class="editForm">
+      <form class="editForm" method="post" action="add.php">
         <label class="form-label" for="fname">First name</label>
-        <input class="form-control" type="text" name="fname" id="fname">
+        <input class="form-control" type="text" name="fname" id="fname" required/>
         <span class="error-message unused"></span>
 
         <label class="form-label">Last name</label>
-        <input class="form-control" type="text" name="lname" id="lname">
+        <input class="form-control" type="text" name="lname" id="lname" required/>
         <span class="error-message unused"></span>
 
         <fieldset class="col-span">
           <legend class="form-label">Prior race experience?</legend>
-          <label class="form-label"><input type="radio" name="experienced" value="1" required> Yes</label>
-          <label class="form-label"><input type="radio" name="experienced" value="0" required checked> No</label>
+          <label class="form-label"><input type="radio" name="experienced" value="yes" required> Yes</label>
+          <label class="form-label"><input type="radio" name="experienced" value="no" required checked> No</label>
         </fieldset>
 
         <label class="form-label">Date of birth</label>
-        <input class="form-control" type="date" name="dob" id="dob">
+        <input class="form-control" type="date" name="dob" id="dob" required/>
         <span class="error-message unused"></span>
 
         <label class="form-label">Gender</label>
-        <select class="form-control" id="gender" name="gender">
+        <select class="form-control" id="gender" name="gender" required>
           <option value="undisclosed">Prefer not to disclose</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
