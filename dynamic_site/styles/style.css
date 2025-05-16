@@ -188,18 +188,8 @@ You will need to define additional CSS rules to style the button colours
     cursor: default;  
 }
 table .btn { margin: 0; }
-#register_b { 
-    background-color: #246fb4; 
-    .main-action {
-
-    }
-}
-#register_b:hover { 
-    background-color: #448fd4; 
-    .main-action {
-
-    }
-}
+#register_b, .main-action { background-color: #246fb4; }
+#register_b:hover, .main-action { background-color: #448fd4; }
 #back_b { background-color: #7c7c7c; }
 #back_b:hover { background-color: #929292; }
 
@@ -215,7 +205,7 @@ using JavaScript in Week 5.)
 - The gap between elements is 10px
 - Justify the content to the left
 */
-#registrationForm {
+#registrationForm,.editForm {
     display: grid;
     grid-template-columns: auto 200px;
     gap: 10px;
@@ -305,7 +295,7 @@ aside {
         font-size: 36px;
     }
 
-    #registrationForm {
+    #registrationForm, .editForm {
         grid-template-columns: 100%;
         gap: 5px;
     }
