@@ -48,11 +48,10 @@ function update()
   global $conn;
   global $id;
 
-  //TODO Complete this function
   $query = "UPDATE Participant
   SET firstName = ?,
       lastName = ?,
-      dob = ?,
+      DOB = ?,
       gender = ?,
       experience = ?
   WHERE particpantID = $id;";
@@ -62,6 +61,8 @@ function update()
       $row = retrieve();
     } else {
       update();
+      $conn->close();
+      redirect("participants.php");
     }
   }
 }
@@ -103,8 +104,8 @@ function update()
             }
           ?>
           <legend class="form-label">Prior race experience?</legend>
-          <label class="form-label"><input type="radio" name="experienced" value="yes" <?php exp_check($row['experience'], "yes"); ?> required> Yes</label>
-          <label class="form-label"><input type="radio" name="experienced" value="no" <?php exp_check($row['experience'], "no"); ?> required> No</label>
+          <label class="form-label"><input type="radio" name="experienced" value="yes" <?php exp_check($row['experience'], "Yes"); ?> required> Yes</label>
+          <label class="form-label"><input type="radio" name="experienced" value="no" <?php exp_check($row['experience'], "No"); ?> required> No</label>
         </fieldset>
 
         <label class="form-label">Date of birth</label>
@@ -122,10 +123,10 @@ function update()
               }
             }
           ?>
-          <option value="undisclosed" <?php gender_check($row['gender'], "undisclosed"); ?>>Prefer not to disclose</option>
-          <option value="male" <?php gender_check($row['gender'], "male"); ?>>Male</option>
-          <option value="female" <?php gender_check($row['gender'], "female"); ?>>Female</option>
-          <option value="neither" <?php gender_check($row['gender'], "neither"); ?>>Non-Binary, Gender Fluid, Gender non-conforming, or Gender queer</option>
+          <option value="undisclosed" <?php gender_check($row['gender'], "Undisclosed"); ?>>Prefer not to disclose</option>
+          <option value="male" <?php gender_check($row['gender'], "Male"); ?>>Male</option>
+          <option value="female" <?php gender_check($row['gender'], "Female"); ?>>Female</option>
+          <option value="neither" <?php gender_check($row['gender'], "Neither"); ?>>Non-Binary, Gender Fluid, Gender non-conforming, or Gender queer</option>
         </select>
 
         <p class="col-span">
