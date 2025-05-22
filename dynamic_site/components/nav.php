@@ -1,18 +1,18 @@
-<nav>
-    <?php
-    if (session_status() !== 2) {
-        session_start();
-    }
+<?php
+if (session_status() !== 2) {
+    session_start();
+}
 
-    $pages = [
-        "index.php" => "Home",
-        "registration.php" => "Registration",
-        "testimonials.php" => "Testimonials",
-        "participants.php" => "Entries",
-        "login.php" => "Login",
-        "logout.php" => "Logout"
-    ];
-    ?>
+$pages = [
+    "index.php" => "Home",
+    "registration.php" => "Registration",
+    "testimonials.php" => "Testimonials",
+    "participants.php" => "Entries",
+    "login.php" => "Login",
+    "logout.php" => "Logout"
+];
+?>
+<nav>
     <ul>
         <?php
         foreach ($pages as $page => $title) {
@@ -25,20 +25,16 @@
                     echo "<a href=$page>$title</a>";
                 }
             } else {
+                echo "<li>";
                 if (str_starts_with($_SERVER['REQUEST_URI'],"/$page")) { 
-        ?>
-        <li>
-        <?php 
                     echo $title;
                 } else { 
-        ?> 
-        </li>
-        <a href=<?php echo $page; ?>>
-            <?php echo $title; ?>
-        </a> 
-        <?php } ?>
-        </li>
-        <?php }} ?>
+                    echo "<a href=$page>$title</a>";
+                }
+                echo "</li>";  
+            }
+        } 
+        ?>
         <li>Contact</li>
     </ul>
 </nav>
