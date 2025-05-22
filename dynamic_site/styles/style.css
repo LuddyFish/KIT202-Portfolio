@@ -238,7 +238,7 @@ form actions (the submit and cancel buttons)
 - It should span two columns (achievable by setting the grid column end to span 2)
 */
 .col-span {
-    grid-column-end: 2;
+    grid-column-end: 3;
 }
 
 #testimonials { 

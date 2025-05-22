@@ -85,11 +85,9 @@ function update()
       <form class="editForm" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"] . "?id=$id"); ?>">
         <label class="form-label" for="fname">First name</label>
         <input class="form-control" type="text" name="fname" id="fname" value="<?php echo $row['firstName']; ?>">
-        <span class="error-message unused"></span>
 
         <label class="form-label">Last name</label>
         <input class="form-control" type="text" name="lname" id="lname" value="<?php echo $row['lastName']; ?>">
-        <span class="error-message unused"></span>
 
         <fieldset class="col-span">
           <?php
@@ -105,10 +103,10 @@ function update()
           <label class="form-label"><input type="radio" name="experienced" value="yes" <?php exp_check($row['experience'], "Yes"); ?> required> Yes</label>
           <label class="form-label"><input type="radio" name="experienced" value="no" <?php exp_check($row['experience'], "No"); ?> required> No</label>
         </fieldset>
+        <span class="error-message unused"></span>
 
         <label class="form-label">Date of birth</label>
         <input class="form-control" type="date" name="dob" id="dob" value="<?php echo $row['DOB']; ?>">
-        <span class="error-message unused"></span>
 
         <label class="form-label">Gender</label>
         <select class="form-control" id="gender" name="gender">

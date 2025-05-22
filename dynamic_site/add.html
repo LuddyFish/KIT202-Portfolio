@@ -27,21 +27,19 @@
       <form class="editForm" method="post" action="add.php">
         <label class="form-label" for="fname">First name</label>
         <input class="form-control" type="text" name="fname" id="fname" required/>
-        <span class="error-message unused"></span>
 
         <label class="form-label">Last name</label>
         <input class="form-control" type="text" name="lname" id="lname" required/>
-        <span class="error-message unused"></span>
 
         <fieldset class="col-span">
           <legend class="form-label">Prior race experience?</legend>
           <label class="form-label"><input type="radio" name="experienced" value="yes" required> Yes</label>
           <label class="form-label"><input type="radio" name="experienced" value="no" required checked> No</label>
         </fieldset>
+        <span class="error-message unused"></span>
 
         <label class="form-label">Date of birth</label>
         <input class="form-control" type="date" name="dob" id="dob" required/>
-        <span class="error-message unused"></span>
 
         <label class="form-label">Gender</label>
         <select class="form-control" id="gender" name="gender" required>
