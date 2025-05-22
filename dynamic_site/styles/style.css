@@ -205,18 +205,13 @@ using JavaScript in Week 5.)
 - The gap between elements is 10px
 - Justify the content to the left
 */
-#registrationForm {
+#registrationForm, .editForm {
     display: grid;
     grid-template-columns: auto 200px;
     gap: 10px;
     justify-content: left;
 }
-.editForm {
-    display: grid;
-    grid-template-columns: auto 200px auto;
-    gap: 10px;
-    justify-content: left;
-}
+
 /*
 A class for a form element label
 
@@ -243,7 +238,7 @@ form actions (the submit and cancel buttons)
 - It should span two columns (achievable by setting the grid column end to span 2)
 */
 .col-span {
-    grid-column-end: 3;
+    grid-column-end: 2;
 }
 
 #testimonials { 
