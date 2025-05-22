@@ -1,4 +1,5 @@
 <?php
+require "components/session.php";
 //TODO Include/Require dbconn
 require "dbconn.php";
 //Check if appropriate GET (and POST) data has been received.

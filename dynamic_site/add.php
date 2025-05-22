@@ -1,4 +1,5 @@
 <?php
+require "components/session.php";
 
 include "dbconn.php";
 
