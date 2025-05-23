@@ -1,5 +1,6 @@
 <?php
 //TODO Add session checking (_after_ you have inserted at least one user)
+include "components/session.php";
 //TODO Include DB connection
 require "dbconn.php";
 
@@ -16,7 +17,9 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
   $statement = $conn->prepare($sql);
   $statement->bind_param('ss', $username, $hashed_pass);
 
-  echo "<p>Inserted user '<strong>$username</strong>' with a hashed password of <strong>$hashed_pass</strong></p>";
+  if ($statement->execute()) {
+    echo "<p>Inserted user '<strong>$username</strong>' with a hashed password of <strong>$hashed_pass</strong></p>";
+  }
   exit;
 }
 
