@@ -32,13 +32,13 @@ function authenticate($user, $pass)
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
         if ($user === $row['username']) {
-          $verity = password_verify($pass, $row['password'])
+          $verity = password_verify($pass, $row['password']);
         }
       }
     }
   }
 
-  return $verity
+  return $verity;
 }
 ?>
 <!DOCTYPE html>
@@ -73,6 +73,9 @@ function authenticate($user, $pass)
       <?php
 
       // Add PHP code here to display an error message if the login attempt is invalid.
+      if ($invalid_login) {
+        echo "<span class=\"error\">ERROR: Username or Password is incorrect.</span>";
+      }
 
       ?>
       <p>Try accessing a protected page like <a href="participants.php">participants.php</a> when are/are not logged in.</p>
