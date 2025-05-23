@@ -1,14 +1,20 @@
 <?php
 //TODO Add session checking (_after_ you have inserted at least one user)
 //TODO Include DB connection
+require "dbconn.php";
 
 $username_exists = false;
 if (isset($_POST["username"]) && isset($_POST["password"])) {
-  $username = ""; //TODO Get value from $_POST with some lightweight cleaning of the username
-  $password = ""; //TODO Get value from $_POST and leave it unchanged
-  $hashed_pass = ""; //TODO Generate the hashed password
+  $username = trim($_POST["username"]); //TODO Get value from $_POST with some lightweight cleaning of the username
+  $password = $_POST["password"]; //TODO Get value from $_POST and leave it unchanged
+  $hashed_pass = password_hash($password, PASSWORD_DEFAULT); //TODO Generate the hashed password
 
   //TODO Complete this if statement (if time you may revise this to use exists())
+  $sql = "INSERT
+          INTO User (username, password)
+          VALUE (?, ?)";
+  $statement = $conn->prepare($sql);
+  $statement->bind_param('ss', $username, $hashed_pass);
 
   echo "<p>Inserted user '<strong>$username</strong>' with a hashed password of <strong>$hashed_pass</strong></p>";
   exit;
@@ -34,7 +40,10 @@ function exists($username)
 </head>
 <body>
   <div id="container">
-    <!-- Optional: You may choose to include common page components here -->
+    <?php 
+      require "components/header.php"; 
+      require "components/nav.php";
+    ?>
     <main>
       <h2>Create New User</h2>
       <?php
@@ -43,11 +52,9 @@ function exists($username)
       <form class="editForm" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <label class="form-label" for="username">Username</label>
         <input class="form-control" type="text" name="username" id="username" placeholder="Enter the new username" maxlength="10" required>
-        <span class="error-message unused"></span>
 
         <label class="form-label">Password</label>
         <input class="form-control" type="password" name="password" id="password" placeholder="Enter their password" minlength="8" required>
-        <span class="error-message unused"></span>
 
         <p class="col-span">
           <button type="submit" class="btn main-action">Add User</button>
@@ -55,7 +62,7 @@ function exists($username)
       </form>
       <p>Return to the <a href="login.php">login</a> page.</p>
     </main>
-    <!-- Optional: You may choose to include a common page component here -->
+    <?php include "components/footer.php"; ?>
   </div>
 </body>
 </html>
