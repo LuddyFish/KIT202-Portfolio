@@ -1,6 +1,6 @@
 <?php
 //TODO Add session checking (_after_ you have inserted at least one user)
-include "components/session.php";
+session_start();
 //TODO Include DB connection
 require "dbconn.php";
 
@@ -11,26 +11,42 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
   $hashed_pass = password_hash($password, PASSWORD_DEFAULT); //TODO Generate the hashed password
 
   //TODO Complete this if statement (if time you may revise this to use exists())
-  $sql = "INSERT
-          INTO User (username, password)
-          VALUE (?, ?)";
-  $statement = $conn->prepare($sql);
-  $statement->bind_param('ss', $username, $hashed_pass);
+  if (!exists($username)) {
+    $sql = "INSERT
+            INTO User (username, password)
+            VALUE (?, ?)";
+    $statement = $conn->prepare($sql);
+    $statement->bind_param('ss', $username, $hashed_pass);
 
-  if ($statement->execute()) {
-    echo "<p>Inserted user '<strong>$username</strong>' with a hashed password of <strong>$hashed_pass</strong></p>";
+    if ($statement->execute()) {
+      echo "<p>Inserted user '<strong>$username</strong>' with a hashed password of <strong>$hashed_pass</strong></p>";
+    }
+    header("Location: login.php");
+    exit;
+  } else {
+    $username_exists = true;
   }
-  exit;
 }
 
 /** Optional improvement: Returns true if the given username is already in use. */
 function exists($username)
 {
   global $conn;
+  $verity = false;
   //TODO If you get time then complete this function and call it above to avoid an SQL exception
   //Here or above you should also set $username_exists to control HTML content below
+  if ($result = $conn->query("SELECT * FROM User")) {
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+        if ($username === $row['username']) {
+          $verity = true;
+          break;
+        }
+      }
+    }
+  }
 
-  return false;
+  return $verity;
 }
 ?>
 <!DOCTYPE html>
@@ -63,6 +79,13 @@ function exists($username)
           <button type="submit" class="btn main-action">Add User</button>
         </p>
       </form>
+      <?php
+      
+      if ($username_exists) {
+        echo "<span class=\"error\">Username already exists.</span>";
+      }
+
+      ?>
       <p>Return to the <a href="login.php">login</a> page.</p>
     </main>
     <?php include "components/footer.php"; ?>

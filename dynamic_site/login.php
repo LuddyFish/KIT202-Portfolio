@@ -33,6 +33,7 @@ function authenticate($user, $pass)
       while ($row = $result->fetch_assoc()) {
         if ($user === $row['username']) {
           $verity = password_verify($pass, $row['password']);
+          break;
         }
       }
     }
@@ -78,8 +79,8 @@ function authenticate($user, $pass)
       }
 
       ?>
-      <p>Try accessing a protected page like <a href="participants.php">participants.php</a> when are/are not logged in.</p>
-
+      <p>Try accessing a protected page like <a href="participants.php">participants.php</a> when are/aren't logged in.</p>
+      <p>Create a <a href="new_user.php">new user</a> page.</p>
     </main>
     <?php
     include "components/footer.php";
