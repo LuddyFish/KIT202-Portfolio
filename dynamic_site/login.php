@@ -25,10 +25,21 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
 function authenticate($user, $pass)
 {
   global $conn;
+  $verity = false;
 
   //TODO Complete this function in Activity 3 (not earlier)
+  if ($result = $conn->query("SELECT * FROM User")) {
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+        if ($user === $row['username']) {
+          $verity = password_verify($pass, $row['password']);
+          break;
+        }
+      }
+    }
+  }
 
-  return true; //A terrible _default_ value, which you will replace
+  return $verity;
 }
 ?>
 <!DOCTYPE html>
@@ -62,11 +73,14 @@ function authenticate($user, $pass)
 
       <?php
 
-      //TODO
+      // Add PHP code here to display an error message if the login attempt is invalid.
+      if ($invalid_login) {
+        echo "<span class=\"error\">ERROR: Username or Password is incorrect.</span>";
+      }
 
       ?>
-      <p>Try accessing a protected page like <a href="participants.php">participants.php</a> when are/are not logged in.</p>
-
+      <p>Try accessing a protected page like <a href="participants.php">participants.php</a> when are/aren't logged in.</p>
+      <p>Create a <a href="new_user.php">new user</a> page.</p>
     </main>
     <?php
     include "components/footer.php";
