@@ -1,3 +1,1 @@
-This is the folder structure for your portfolio, containing your work in the tutorials and journal. You will need to add a top-level `index.html` (or, if you clone the repository directly into your individual webspace on ictteach-usermin, amend the auto-generated `index.html` there) to provide an index to your work.
-
-You can delete this file if you wish.
+This repository contains all the tutorial work that was expected of completition. There are other private repositories that store data for Assignments 1 and 2 (mentioned in the journal), which is the same work but focus on the frontend and backend of web development respectively. If you'd like to view either one of them, please contact me (you would have my email if I was happy to grant you access).
